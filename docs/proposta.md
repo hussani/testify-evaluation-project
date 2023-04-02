@@ -1,3 +1,7 @@
+## Proposta de projeto MAC-6931
+
+## Hussani Silva de Oliveira
+
 # Avaliação de extensibilidade e escalabilidade da plataforma Testify
 
 ## Motivação
@@ -18,6 +22,36 @@ Por meio de dados quantitativos coletados utilizando ferramentas de análise de 
 Para avaliar a extensibilidade da plataforma, pretendo analisar o código fonte dos componentes, e identificar os principais desafios para a adição de novos exercícios, novas linguagens de programação e frameworks de testes. Esta análise levará em consideração a arquitetura da plataforma, testes, acoplamento e modularização dos componentes.
 Neste trabalho não será feita uma análise qualitativa com base na experiência dos usuários.
 
-## Detalhes adicionais
+O acompanhamento do trabalho poderá ser feito através do repositório [hussani/testify-evaluation-project](https://github.com/hussani/testify-evaluation-project) no Github.
 
-Outros detalhes podem ser encontrados no documento de [proposta](./docs/proposta.md).
+## Cronograma
+
+### Entrega 1 (02/04)
+- Visão geral do livro Effective Software Testing, de Maurício Aniche
+- Visão geral da plataforma Testify e seus principais componentes
+
+### Entrega 2 (16/04)
+- Análise de código para avaliar a extensibilidade da plataforma
+- Relatório parcial sobre a extensibilidade da plataforma e seus desafios
+
+### Entrega 3 (30/04)
+- Coleta de dados de desempenho geral da plataforma
+- Testes de estresse para avaliar o desempenho do software em situações extremas
+
+### Entrega 4 (14/05)
+- Análise de desempenho isolada do componente cliente (frontend) da plataforma
+
+### Entrega 5 (28/05)
+-  Análise de desempenho isolada do componente servidor (backend) da plataforma
+
+### Entrega 6 (11/06)
+- Análise de desempenho isolada do componente executor de testes da plataforma
+
+### Entrega 7 (25/06)
+- Análise do impacto do crescimento do número de exercícios e do número de usuários no desempenho da plataforma
+
+### Entrega 8 (02/07)
+- Conclusão do projeto e redação do relatório final
+
+## Resultados esperados
+Espero com este trabalho certificar que a plataforma Testify pode ser utilizada em larga escala por estudantes de testes de software, e com desempenho aceitável. Espero também documentar as como a plataforma pode suportar novas linguagens de programação e frameworks de testes, identificar os principais desafios referentes à escalabilidade e manutenibilidade, e propor soluções para estes desafios em trabalhos futuros.
