@@ -120,7 +120,7 @@ Assim como observado no componente Exercises, os arquivos com menor MI são os q
 
 #### Testabilidade
 
-Na definição da ISO/IEC 25010, testabilidade é uma sub-qualidade de manutenibilidade, e é definida como o grau de eficiência e eficácia com que os testes podem ser executados para verificar a conformidade do sistema com os requisitos. 
+Na definição da ISO/IEC 25010, testabilidade é uma sub-qualidade de manutenibilidade, e é definida como o grau de eficiência e eficácia com que os testes podem ser executados para verificar a conformidade do sistema com os requisitos. A análise de Maintainability Index (MI) não avalia a implementação, ou cobertura de testes do sistema.
 
 Analisando os três componentes que compõe a plataforma, o componente Runner possui a maior cobertura de testes. Não foi notada a presença de nenhuma biblioteca que auxiliasse a execução dos testes unitários, como `pytest`, ou outro similar.
 
@@ -130,9 +130,11 @@ Não foi evidenciada nenhuma estrutura de testes para o componente Exercises.
 
 O componente Runner possui 3 testes de integração, que testam os dois ambientes de execução de testes disponíveis na plataforma. O teste de integração implementado é no formato caixa-preta, onde uma requisição HTTP é simulada e o resultado da execução é verificado.  Os componentes Client e Exercises não possuem testes de integração.
 
-#### Conclusão
+## Conclusão
 
+Não foi possível analisar isoladamente o critério de extensibilidade do código da plataforma. Todavia, a análise de manutenibilidade apontou que o código da plataforma possui boa manutenibilidade. Por extensibilidade ser uma sub-qualidade de manutenibilidade, existe a hipótese de que o código da plataforma possua boa extensibilidade.
 
+A plataforma possui baixa cobertura de testes, e este pode ser um impecílio para que mudanças sejam implementadas sem que as funcionalidades já existentes sejam comprometidas.
 
 ## Referencias bibliográficas
 

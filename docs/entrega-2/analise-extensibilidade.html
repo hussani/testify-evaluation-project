@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="undefined - microjam page">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/vs.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/goessner/mdmath/themes/publication/style.css">
+
+<title>undefined</title>
+</head>
+<body id="top">
+<header>
+
+
+
+
+
+
+</header>
+<main>
+<span id="markdown-mermaid" aria-hidden="true"
+                    data-dark-mode-theme="dark"
+                    data-light-mode-theme="default"></span>
+                <h2 id="análise-de-extensibilidade-da-plataforma">Análise de extensibilidade da plataforma</h2>
+<p>A extensibilidade de um software é a capacidade do mesmo receber novos componentes. É encontrada na normativa ISO/IEC-25010 a definição de extensibilidade como sendo &quot;o esforço relativo para expandir a capacidade ou desempenho do software, aprimorando as funções atuais ou incluindo novas funções ou dados&quot;.</p>
+<p>A extensibilidade é também uma das características da modificabilidade, um uma das sub-qualidades do aspecto de qualidade de manutenibilidade. A modificabilidade é definida como &quot;a capacidade de modificar o software para corrigir defeitos, adaptar o software a novas necessidades ou melhorar o desempenho do software&quot; (ISO/IEC-25010).</p>
+<h3 id="estudos-sobre-extensibilidade">Estudos sobre extensibilidade</h3>
+<p>Existem diversos estudos sobre extensibilidade de software, e como ela pode ser avaliada. A seguir destaco os estudos que foram mais relevantes nesta área.</p>
+<h4 id="emsa">EMSA</h4>
+<p>EMSA (acrônimo em inglês para Métrica de Extensibilidade para Arquitetura de Software). Definiu 4 fatores da extensibilidade:</p>
+<ul>
+<li>Compreensividade</li>
+<li>Projetabilidade</li>
+<li>Implementabilidade</li>
+<li>Adaptabilidade</li>
+</ul>
+<p>Para cada fator a EMSA possui uma métrica relacionada. O conjunto de métricas obtidas individualmente são calculadas com um peso em uma nova fórmula, que resulta em uma pontuação final para a extensibilidade do software.</p>
+<p>O modelo teórico proposto não está implementado publicamente em nenhuma biblioteca. Por este motivo, não será utilizado neste trabalho.</p>
+<h4 id="qmood">QMOOD</h4>
+<p>As métricas QMOOD (acrônimo em inglês para Modelo de Qualidade para Projetos de Orientação a Objeto) são um conjunto de métricas que avaliam a qualidade de um software orientado a objetos. A extensibilidade é avaliada através da métrica QMOOD-Extensibility, que é calculada a partir de 4 sub-métricas relacionadas a orientação a objetos: abstração, acoplamento, herança e polimorfismo.</p>
+<p>Este modelo é debatido em diversos artigos. Porém não existe uma implementação de seu algoritmo em uma biblioteca que possa ser utilizada para avaliar a extensibilidade na plataforma Testify.</p>
+<h3 id="manutenibilidade">Manutenibilidade</h3>
+<p>Pela dificuldade de avaliar automaticamente e isoladamente a extensibilidade de um software, utilizarei de maneira geral o conceito de manutenibilidade para avaliar o esforço de modificação e manutenção da plataforma.</p>
+<p>Para esta análise, utilizarei a métrica de Índice de Manutenibilidade (MI, em inglês Maintainability Index). Este índice é calculado com base em 4 métricas: Complexidade Ciclomática, Comentários, volume de Halstead e número de linhas de código. A fórmula para o cálculo do MI é a seguinte:</p>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>M</mi><mi>I</mi><mo>=</mo><mn>171</mn><mo>−</mo><mn>5.</mn><msup><mn>2</mn><mo lspace="0em" rspace="0em">∗</mo></msup><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>a</mi><mi>v</mi><mi>g</mi><mi>V</mi><mo stretchy="false">)</mo><mo>−</mo><mn>0.2</mn><msup><mn>3</mn><mo lspace="0em" rspace="0em">∗</mo></msup><mi>a</mi><mi>v</mi><mi>g</mi><mi>V</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo><mo>−</mo><mn>16.</mn><msup><mn>2</mn><mo lspace="0em" rspace="0em">∗</mo></msup><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>a</mi><mi>v</mi><mi>g</mi><mi>L</mi><mi>O</mi><mi>C</mi><mo stretchy="false">)</mo><mo>+</mo><mi>a</mi><mi>v</mi><mi>g</mi><mi>C</mi><mi>M</mi></mrow><annotation encoding="application/x-tex"> MI= 171-5.2^{\ast}\ln(avgV)-0.23^{\ast }avgV(g)-16.2^{\ast}\ln(avgLOC)+avgCM </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">171</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5.</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.738696em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∗</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.2</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.738696em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∗</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">16.</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.738696em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∗</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mord mathnormal">vgL</span><span class="mord mathnormal" style="margin-right:0.07153em;">OC</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.10903em;">CM</span></span></span></span></span></eqn></section></math>
+<p>onde, <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>v</mi><mi>g</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">avgV</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span></eq>, <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>v</mi><mi>g</mi><mi>V</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">avgV(g)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span></span></span></span></eq>, <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>v</mi><mi>g</mi><mi>L</mi><mi>O</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">avgLOC</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">vgL</span><span class="mord mathnormal" style="margin-right:0.07153em;">OC</span></span></span></span></eq>, e <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>v</mi><mi>g</mi><mi>C</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">avgCM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">vg</span><span class="mord mathnormal" style="margin-right:0.10903em;">CM</span></span></span></span></eq> são a média de esforço, extensão de V(G), média de linhas de código, e número de comentários por sub-módulo (função ou procedure) em um sistema de software. (Coleman, 1994)</p>
+<p>O índice de manutenibilidade é um índice que varia de 0 a 100, sendo 100 o valor máximo. O índice de manutenibilidade é calculado para cada sub-módulo do software, e a média dos índices é calculada para obter o índice de manutenibilidade do sistema como um todo.</p>
+<p>Para avaliar a manutenabilidade dos componentes Runner e Exercises, que são desenvolvidos em Python, utilizei a biblioteca <a href="https://wily.readthedocs.io/en/latest/">wily</a>.</p>
+<p>Não efetuei a análise de manutenibilidade do componente Client, pois este concentra menos regras de negócio do que os demais componentes. Além disto, o componente Client é desenvolvido em JavaScript, e a biblioteca wily não possui suporte para esta linguagem.</p>
+<h4 id="exercises">Exercises</h4>
+<p>A partir do resultado obtido pelo wily, foi possível calcular o índice de manutenibilidade do componente Exercises. O MI total do projeto é ~92.39, um valor considerado de alta manutenibiliade.
+O resultado completo foi o seguinte:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Maintainability Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>services/exercise_definitions_service.py</td>
+<td>53.8729</td>
+</tr>
+<tr>
+<td>services/section_definitions_service.py</td>
+<td>56.5037</td>
+</tr>
+<tr>
+<td>models/exercise_definition.py</td>
+<td>60.637</td>
+</tr>
+<tr>
+<td>models/section_definition.py</td>
+<td>66.0123</td>
+</tr>
+<tr>
+<td>services</td>
+<td>82.0753</td>
+</tr>
+<tr>
+<td>models</td>
+<td>90.8312</td>
+</tr>
+<tr>
+<td></td>
+<td>92.2393</td>
+</tr>
+<tr>
+<td>utils/constants.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/definition_file_system_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>env.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>json_keys/section_definition_json_keys.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/processed_file_schema.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/definition_type.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/file_schema_type.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/file_schema.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/definitions_json_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/processed_exercise_definition.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/definitions_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>json_keys/exercise_definition_json_keys.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>main.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>bootstrap.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>generate_definitions.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/processed_section_definition.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>dependency_container.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>json_keys</td>
+<td>100</td>
+</tr>
+<tr>
+<td>utils</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>92.3912</td>
+</tr>
+</tbody>
+</table>
+<p>Os arquivos com menor MI são os que possuem maior complexidade, e onde estão concentradas as regras de agregação dos exercícios. Os arquivos com o menor MI também são os com maior complexidade ciclomática, sendo <code>services/exercise_definitions_service.py</code> o arquivo com maior complexidade ciclomática, com valor 19, e <code>services/section_definitions_service.py</code> o segundo arquivo com maior complexidade ciclomática, com valor 11.</p>
+<h4 id="runner">Runner</h4>
+<p>A partir do resultado obtido pelo wily, foi possível calcular o índice de manutenibilidade do componente Runner. O MI total do projeto é ~89.54, um valor considerado de alta manutenibiliade.
+O resultado completo foi o seguinte:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Maintainability Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>services/runner_service.py</td>
+<td>56.0144</td>
+</tr>
+<tr>
+<td>services/docker_service.py</td>
+<td>58.3996</td>
+</tr>
+<tr>
+<td>tests/test_javascript_jest_environment.py</td>
+<td>67.2867</td>
+</tr>
+<tr>
+<td>tests/test_typescript_jest_environment.py</td>
+<td>67.2867</td>
+</tr>
+<tr>
+<td>tests</td>
+<td>67.2867</td>
+</tr>
+<tr>
+<td>builders/test_verifier_builder.py</td>
+<td>67.606</td>
+</tr>
+<tr>
+<td>services/test_verifiers/javascript_jest_test_verifier.py</td>
+<td>81.8563</td>
+</tr>
+<tr>
+<td>services/test_verifiers/typescript_jest_test_verifier.py</td>
+<td>81.8563</td>
+</tr>
+<tr>
+<td>services/test_verifiers</td>
+<td>81.8563</td>
+</tr>
+<tr>
+<td>services</td>
+<td>82.5895</td>
+</tr>
+<tr>
+<td>builders</td>
+<td>83.803</td>
+</tr>
+<tr>
+<td></td>
+<td>89.5384</td>
+</tr>
+<tr>
+<td>main.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/run_request.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/runner_file_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>utils/docker_container.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>bootstrap.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>builders/docker_container_builder.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>dependency_container.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/docker_image_name.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>env.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>interfaces/test_verifier_interface.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>client_test.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/docker_image_map_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>services/docker_image_name_service.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models/testing_environment.py</td>
+<td>100</td>
+</tr>
+<tr>
+<td>interfaces</td>
+<td>100</td>
+</tr>
+<tr>
+<td>models</td>
+<td>100</td>
+</tr>
+<tr>
+<td>utils</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>89.151</td>
+</tr>
+</tbody>
+</table>
+<p>Assim como observado no componente Exercises, os arquivos com menor MI são os que concentram as regras mais complexas da aplicação. Os arquivos <code>services/runner_service.py</code> e <code>services/docker_service.py</code> são os que possuem o maior volume de código no componente.</p>
+<h4 id="testabilidade">Testabilidade</h4>
+<p>Na definição da ISO/IEC 25010, testabilidade é uma sub-qualidade de manutenibilidade, e é definida como o grau de eficiência e eficácia com que os testes podem ser executados para verificar a conformidade do sistema com os requisitos. A análise de Maintainability Index (MI) não avalia a implementação, ou cobertura de testes do sistema.</p>
+<p>Analisando os três componentes que compõe a plataforma, o componente Runner possui a maior cobertura de testes. Não foi notada a presença de nenhuma biblioteca que auxiliasse a execução dos testes unitários, como <code>pytest</code>, ou outro similar.</p>
+<p>O componente Client possui boa cobertura de testes dos componentes não visuais. Porém, a cobertura de testes dos componentes visuais é considerada baixa, já que apenas dois componentes foram testados.</p>
+<p>Não foi evidenciada nenhuma estrutura de testes para o componente Exercises.</p>
+<p>O componente Runner possui 3 testes de integração, que testam os dois ambientes de execução de testes disponíveis na plataforma. O teste de integração implementado é no formato caixa-preta, onde uma requisição HTTP é simulada e o resultado da execução é verificado.  Os componentes Client e Exercises não possuem testes de integração.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Não foi possível analisar isoladamente o critério de extensibilidade do código da plataforma. Todavia, a análise de manutenibilidade apontou que o código da plataforma possui boa manutenibilidade. Por extensibilidade ser uma sub-qualidade de manutenibilidade, existe a hipótese de que o código da plataforma possua boa extensibilidade.</p>
+<p>A plataforma possui baixa cobertura de testes, e este pode ser um impecílio para que mudanças sejam implementadas sem que as funcionalidades já existentes sejam comprometidas.</p>
+<h2 id="referencias-bibliográficas">Referencias bibliográficas</h2>
+<div class="csl-entry"><a name="1"></a> Mari, M., &#38; Eila, N. (2003). The impact of maintainability on component-based software systems. <i>Conference Proceedings of the EUROMICRO</i>, 25–32. https://doi.org/10.1109/EURMIC.2003.1231563</div>
+<div class="csl-entry">Coleman, D., Ash, D., Lowther, B., &#38; Oman, P. (1994). Using metrics to evaluate software system maintainability. <i>Computer</i>, <i>27</i>(8), 44–49. https://doi.org/10.1109/2.303623</div>
+<div class="csl-entry">Wani, M. F., &#38; Gandhi, O. P. (1999). Development of maintainability index for mechanical systems. <i>Reliability Engineering and System Safety</i>, <i>65</i>(3), 259–270. https://doi.org/10.1016/S0951-8320(99)00004-6</div>
+<div class="csl-entry">Alreffaee, T. R., Dabdawb, M. M. A., &#38; Taha, D. B. (2021). Measure extendibility/extensibility quality attribute using object oriented design metric. <i>TELKOMNIKA (Telecommunication Computing Electronics and Control)</i>, <i>19</i>(5), 1507. https://doi.org/10.12928/telkomnika.v19i5.19278</div>
+<div class="csl-entry">Kim, J., Kang, S., Ahn, J., &#38; Lee, S. (2018). EMSA: Extensibility Metric for Software Architecture. <i>International Journal of Software Engineering and Knowledge Engineering</i>, <i>28</i>(03), 371–405. https://doi.org/10.1142/S0218194018500134</div>
+<div class="csl-entry">Goyal, P. K., &#38; Joshi, G. (2014). QMOOD metric sets to assess quality of Java program. <i>Proceedings of the 2014 International Conference on Issues and Challenges in Intelligent Computing Techniques, ICICT 2014</i>, 520–533. https://doi.org/10.1109/ICICICT.2014.6781337</div>
+<div class="csl-entry">Oliveira Junior, E. A., Maldonado, J. C., &#38; Gimenes, I. M. S. (2010). Empirical Validation of Complexity and Extensibility Metrics for Software Product Line Architectures. <i>2010 Fourth Brazilian Symposium on Software Components, Architectures and Reuse</i>, 31–40. https://doi.org/10.1109/SBCARS.2010.13</div>
+<div class="csl-entry">Malhotra, R., &#38; Lata, K. (2020). A systematic literature review on empirical studies towards prediction of software maintainability. <i>Soft Computing</i>, <i>24</i>(21), 16655–16677. https://doi.org/10.1007/S00500-020-05005-4/TABLES/15</div>
+<div class="csl-entry"><i>ISO/IEC 25010:2011(en), Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models</i>. (n.d.). Retrieved April 16, 2023, from https://www.iso.org/obp/ui/#iso:std:iso-iec:25010:ed-1:v1:en</div>
+</main>
+</body>
+</html>
